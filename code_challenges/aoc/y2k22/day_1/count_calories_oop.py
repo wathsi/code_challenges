@@ -1,4 +1,4 @@
-# TODO Clean docblocks
+# TODO #76 Clean docblocks
 """
 This module contains an optimized object oriented solution for Advent of Code (AoC) 2022 - Day 1.
 
@@ -69,15 +69,24 @@ class CountCalories:
         """
         Call destructor to free up memory (C-style).
 
+        This method is not necessary in Python as it is a garbage collected language,
+        but it is good practice to explicitly clean up memory.
+
         Note
         ----
-            Since Python is a GC language, explicit del is not necessary.
+        Since Python is a GC language, explicit del is not necessary.
         """
+        # Delete the calories_sum list if it exists
         if hasattr(self, "calories_sum"):
-            del self.calories_sum
+            del self.calories_sum  # Delete the calories_sum list
 
+        # Delete the _file_path string if it exists
         if hasattr(self, "_file_path"):
-            del self._file_path
+            del self._file_path  # Delete the _file_path string
+
+        # Delete the data_reader object if it exists
+        if hasattr(self, "data_reader"):
+            del self.data_reader  # Delete the data_reader object
 
     @property
     def puzzle_file_path(self) -> str:
